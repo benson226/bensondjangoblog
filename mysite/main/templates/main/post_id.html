@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>第{{post.id}}篇文章</title>
+    </head>
+    <body>
+        <button><a href="{% url 'hello' %}"> <<<-返回首頁</a></button>
+        <h1> {{post.title}}</h1>
+        <p>{{post.content}}</p>
+        <p>作者: {{post.author}}</p>
+        {% if user == post.author %}
+        <form method="POST" action="{% url 'delete_post' post.id %}">
+            {% csrf_token %}
+            <button type="submit">刪除文章</button>
+        </form>
+        {% endif %}
+    </body>
+</html>

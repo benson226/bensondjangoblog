@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> first Django website</title>
+    </head>
+    <body>  
+        <h1>文章列表</h1>
+        <p>歡迎 {{user.username}}</p>
+        <button><a href="{% url 'logout' %}">登出</a></button>
+        <ul>
+            {% for post in posts %}
+            <li><a href="{% url 'post_detail' post.id %}">{{post.title}}</a></li>
+            {% endfor %}
+        </ul>
+        <p>This is my first Django website.</p>
+        
+        <button><a href="http://127.0.0.1:8000/add_form/">新增文件</a></button>
+    </body>
+</html>

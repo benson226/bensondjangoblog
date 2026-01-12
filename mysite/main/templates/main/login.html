@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> login</title>
+    </head>
+    <body>
+        <h1>登入</h1>
+        <ul>
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">登入</button>
+            </form>
+        </ul>
+    </body>
+</html>
